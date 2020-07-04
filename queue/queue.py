@@ -22,12 +22,9 @@ class Queue(Node):
 
     # Function to dequeue
     def dequeue(self):
-        if self.isEmpty() == True:
-            return None
-        else:
-            item = self.head.data
-            self.head = self.head.next
-            return item
+        front = self.getFront()
+        self.head = self.head.next
+        return front
 
     # Function to get size of queue
     def getSize(self):
