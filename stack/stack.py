@@ -64,11 +64,13 @@ class Stack(Node):
         if self.isEmpty() == True:
             return None
         else:
-            temp = self.head
-            position = 0
-            while temp is not None:
+            position = 1
+            current = self.head
+            if current.data == key:
+                return position
+            while current.next is not None:
                 position += 1
-                if (temp.data == key):
+                if (current.next.data == key):
                     return position
-                temp = temp.next
+                current = current.next
         return None
